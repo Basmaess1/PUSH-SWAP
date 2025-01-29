@@ -94,7 +94,7 @@ t_stack	*handle_one_input(char *str)
 		if (!is_valid_integer(res[i]))
 			return (free_stack(s.stack), ft_free(res), NULL);
 		s.new_node = ft_lstnew(ft_atoi(res[i++], &flag));
-		if (!s.new_node)
+		if (!s.new_node || !flag)
 			return (free_stack(s.stack), ft_free(res), NULL);
 		if (!s.stack)
 			s.stack = s.new_node;
@@ -120,7 +120,7 @@ t_stack	*handle_multiple_args(int ac, char **av)
 		if (!is_valid_integer(av[i]))
 			return (free_stack(s.stack), NULL);
 		s.new_node = ft_lstnew(ft_atoi(av[i], &flag));
-		if (!s.new_node)
+		if (!s.new_node || !flag)
 			return (free_stack(s.stack), NULL);
 		if (!s.stack)
 			s.stack = s.new_node;

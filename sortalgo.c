@@ -57,8 +57,8 @@ void	rotate_optimal(t_stack **stack, int target, char stack_name)
 int	get_chunk_size(int size, int min, int max)
 {
 	if (size <= 100)
-		return ((max - min) / 4);
-	return ((max - min) / 8);
+		return ((max - min) / 5);
+	return ((max - min) / 11);
 }
 
 void	update_chunk_bounds(int *start, int *end, int chunk_size, int max)

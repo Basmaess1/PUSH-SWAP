@@ -87,7 +87,7 @@ t_stack	*parse_input(int ac, char **av)
 	t_stack		*stack;
 
 	if (ac < 2)
-		ft_error();
+		exit(1);
 	if (ac == 2)
 		stack = handle_one_input(av[1]);
 	else

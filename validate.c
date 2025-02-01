@@ -95,7 +95,7 @@ t_stack	*handle_one_input(char *str)
 			return (free_stack(s.stack), ft_free(res), NULL);
 		s.new_node = ft_lstnew(ft_atoi(res[i++], &flag));
 		if (!s.new_node || !flag)
-			return (free_stack(s.stack), ft_free(res), NULL);
+			return (free(new_node), free_stack(s.stack), ft_free(res), NULL);
 		if (!s.stack)
 			s.stack = s.new_node;
 		else
@@ -121,7 +121,7 @@ t_stack	*handle_multiple_args(int ac, char **av)
 			return (free_stack(s.stack), NULL);
 		s.new_node = ft_lstnew(ft_atoi(av[i], &flag));
 		if (!s.new_node || !flag)
-			return (free_stack(s.stack), NULL);
+			return (free(s.new_node), free_stack(s.stack), ft_free(res), NULL);
 		if (!s.stack)
 			s.stack = s.new_node;
 		else
